@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors=require('cors');
 const dishes = require("./routes/dishRoutes");
 const userRoutes = require("./routes/userRoutes");
 
@@ -16,7 +17,7 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
+app.use(cors())
 app.use(express.json());
 //middleware
 app.use((req, res, next) => {
