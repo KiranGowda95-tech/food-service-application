@@ -1,23 +1,13 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const cors=require('cors');
+const cors = require("cors");
 const dishes = require("./routes/dishRoutes");
 const userRoutes = require("./routes/userRoutes");
-
+const connectDB = require("./config/db");
 const app = express();
 const PORT = 5000;
 
-mongoose
-  .connect(
-    "mongodb+srv://kirankumardn74:kumar123@devconnector.fmvtn9e.mongodb.net/?retryWrites=true&w=majority&appName=DevConnector"
-  )
-  .then(() => {
-    console.log("Connected to Atlas database");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-app.use(cors())
+connectDB();
+app.use(cors());
 app.use(express.json());
 //middleware
 app.use((req, res, next) => {
