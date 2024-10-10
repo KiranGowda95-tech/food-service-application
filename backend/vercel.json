@@ -2,9 +2,9 @@
     "version": 2,
     "name": "food-delivery",
     "builds": [
-        { "src": "index.js", "use": "@vercel/node" }
+       { "src": "index.js", "use": "@vercel/node" }
     ],
     "routes": [
-        { "src": "/api/(.*)", "dest": "/index.js" }  // Adjust as needed
+       { "src": "/(.*)", "dest": "/index.js" }
     ]
-}
+ }
