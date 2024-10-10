@@ -7,7 +7,13 @@ const app = express();
 const PORT = 5000;
 
 connectDB();
-app.use(cors());
+
+app.use(cors({
+    origin: 'https://food-service-application-pi6u.vercel.app', // Allow only your frontend
+    methods: 'GET,POST,PUT,DELETE', // Specify allowed methods
+    credentials: true, // If needed for cookies or auth
+}));
+
 app.use(express.json());
 //middleware
 app.use((req, res, next) => {
