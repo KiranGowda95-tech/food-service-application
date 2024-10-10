@@ -30,7 +30,7 @@ const Contact = () => {
       <div className="container">
         <div className="contact-details">
           <h2>
-            Feel up the form and our team will get back to <br /> you within 24
+            Fill up the form and our team will get back to <br /> you within 24
             hours
           </h2>
           <div className="contact-details-info">
